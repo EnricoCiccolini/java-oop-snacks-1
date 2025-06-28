@@ -1,0 +1,33 @@
+package org.lessons.java.snack;
+
+public class RegistroStudenti {
+
+    private int numStudenti = 0;
+    private String registro[] = new String[numStudenti];
+
+    public int getNumberStudent() {
+        return numStudenti;
+    }
+
+    public void addStudent(String Nome, String cognome, int age) {
+        String NameComplete = Nome + " " + cognome + "di  " + age + " anni";
+        this.numStudenti++;
+        String nuovoRegistro[] = new String[numStudenti];
+        for (int i = 0; i < registro.length; i++) {
+            nuovoRegistro[i] = registro[i];
+        }
+        this.registro = nuovoRegistro;
+        nuovoRegistro[(numStudenti - 1)] = NameComplete;
+        registro = nuovoRegistro;
+
+    }
+
+    public String getAllClassStudent() {
+        String AllClass = "la classe è composta da ";
+        for (int i = 0; i < registro.length; i++) {
+            AllClass = (AllClass + " ," + registro[i]);
+        }
+        return AllClass;
+    }
+
+}
