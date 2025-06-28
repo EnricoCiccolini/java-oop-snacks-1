@@ -9,15 +9,28 @@ public class RegistroStudenti {
         return numStudenti;
     }
 
-    public void addStudent(String Nome, String cognome, int age) {
-        String NameComplete = Nome + " " + cognome + "di  " + age + " anni";
+    // public void addStudent(String Nome, String cognome, int age) {
+    // String NameComplete = Nome + " " + cognome + "di " + age + " anni";
+    // this.numStudenti++;
+    // String nuovoRegistro[] = new String[numStudenti];
+    // for (int i = 0; i < registro.length; i++) {
+    // nuovoRegistro[i] = registro[i];
+    // }
+    // this.registro = nuovoRegistro;
+    // nuovoRegistro[(numStudenti - 1)] = NameComplete;
+    // registro = nuovoRegistro;
+
+    // }
+
+    public void addStudent(studente studente) {
+
         this.numStudenti++;
         String nuovoRegistro[] = new String[numStudenti];
         for (int i = 0; i < registro.length; i++) {
             nuovoRegistro[i] = registro[i];
         }
         this.registro = nuovoRegistro;
-        nuovoRegistro[(numStudenti - 1)] = NameComplete;
+        nuovoRegistro[(numStudenti - 1)] = studente.getInfo();
         registro = nuovoRegistro;
 
     }
