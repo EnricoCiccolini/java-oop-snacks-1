@@ -3,7 +3,7 @@ package org.lessons.java.snack;
 public class RegistroStudenti {
 
     private int numStudenti = 0;
-    private String registro[] = new String[numStudenti];
+    private studente registro[] = new studente[numStudenti];
 
     public int getNumberStudent() {
         return numStudenti;
@@ -25,12 +25,12 @@ public class RegistroStudenti {
     public void addStudent(studente studente) {
 
         this.numStudenti++;
-        String nuovoRegistro[] = new String[numStudenti];
+        studente nuovoRegistro[] = new studente[numStudenti];
         for (int i = 0; i < registro.length; i++) {
             nuovoRegistro[i] = registro[i];
         }
         this.registro = nuovoRegistro;
-        nuovoRegistro[(numStudenti - 1)] = studente.getInfo();
+        nuovoRegistro[(numStudenti - 1)] = studente;
         registro = nuovoRegistro;
 
     }
@@ -38,7 +38,8 @@ public class RegistroStudenti {
     public String getAllClassStudent() {
         String AllClass = "la classe è composta da ";
         for (int i = 0; i < registro.length; i++) {
-            AllClass = (AllClass + " ," + registro[i]);
+
+            AllClass = (AllClass + ", " + registro[i].getInfo());
         }
         return AllClass;
     }
